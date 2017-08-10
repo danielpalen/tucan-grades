@@ -7,6 +7,15 @@ To run the scripy you need to have Python3 installed and then install Robobrowse
 pip3 install robobrowser
 ```
 
+You also need to provide the scripy with some information in a file called ```config.json```. An
+example can be found in the ```config_sample.json``` file. You can just fill in the information and rename the file.
+Basically you habe to provide the following things:
+
+- user id to log into tucan
+- password to log into tucan
+- tucan email adress (@stud.tu-darmstadt.de)
+- general email adress you want the new grades to be sent to
+
 You can then run this script repeatedly in a cronjob to check tucan every couple of minutes.
 ```
 crontab -e
