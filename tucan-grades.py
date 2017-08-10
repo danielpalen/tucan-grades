@@ -88,27 +88,23 @@ def save_grade_ids(grades):
 
 def which_grades_are_new(grades):
     """Determines, which grades are new and returns them in a list."""
-    old_grade_ids = get_old_grade_ids()
-    new_grades = [ g for g in grades if not g['id'] in old_grade_ids ]
-
+    new_grades = [ g for g in grades if not g['id'] in get_old_grade_ids() ]
     if new_grades:
         print('need to persist')
         save_grade_ids(grades)
-
     return list(new_grades)
 
 
 if __name__ == '__main__':
     browser = RoboBrowser(history=True)
-
     with open('config.json') as f:
-        config = json.load(f)
+        config      = json.load(f)
         user        = config['user']
         password    = config['password']
         tucan_email = config['tucan_email']
         email       = config['email']
 
-        grades = get_grades()
+        grades     = get_grades()
         new_grades = which_grades_are_new(grades)
         if new_grades:
             send_mail(new_grades)
