@@ -2,14 +2,15 @@
 Small Python script to check tucan for new grades and send an email if there are any.
 
 ## Setup
-To run the scripy you need to have Python3 installed and then install Robobrowser by running
+To run the script you need to have Python3 installed and then install Robobrowser by running
 ```
 pip3 install robobrowser
 ```
 
 You also need to provide the scripy with some information in a file called ```config.json```. An
-example can be found in the ```config_sample.json``` file. You can just fill in the information and rename the file.
-Basically you habe to provide the following things:
+example can be found in the ```config_sample.json``` file. You can just fill in the information and rename the file. It is possible to run this script for multiple users, by just adding multiple user
+objects to the array in the configuration file.
+Basically you have to provide the following things:
 
 - user id to log into tucan
 - password to log into tucan
