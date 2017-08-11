@@ -112,6 +112,7 @@ if __name__ == '__main__':
             tucan_email = account['tucan_email']
             email       = account['email']
 
+            print('Getting grades for ', user)
             grades     = get_grades(user, password)
             new_grades = which_grades_are_new(user, grades)
             if new_grades:
@@ -119,3 +120,4 @@ if __name__ == '__main__':
                 print('new grades email sent.')
             else:
                 print('no new grades.')
+            print()
